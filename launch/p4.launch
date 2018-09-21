@@ -1,0 +1,23 @@
+<launch>
+    <arg name="cam"     default = "$(find rviz_hybrid_imshow)/config/p4.yaml" />
+    <arg name="image"   default = "$(find rviz_hybrid_imshow)/image/src.png" />
+
+    <node
+    pkg="rviz_hybrid_imshow"
+    type="rviz_hybrid_imshow"
+    name="rviz_hybrid_imshow"
+    output="screen">
+        <rosparam subst_value="True">
+            camera_model: $(arg cam)
+            image_name: $(arg image)
+            scale:  300
+            yaw:    -10.5
+            pitch:  0
+            roll:   -112.5
+            tx:     110
+            ty:     -220
+            tz:     30.4
+        </rosparam>
+    </node>
+
+</launch>
